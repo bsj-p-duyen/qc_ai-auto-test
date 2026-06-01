@@ -70,3 +70,6 @@ def test_create_account_9(create_account_page: Page) -> None:
 def test_create_account_10(create_account_page: Page) -> None:
     create_account_page.get_by_placeholder("**********").fill("パスワード")
     expect(create_account_page.get_by_placeholder("**********")).to_have_value("*****")
+
+def test_create_account_11(create_account_page: Page) -> None:
+    create_account_page.locator('.modify-account-modal input[name="password"]').fill("12345678")
